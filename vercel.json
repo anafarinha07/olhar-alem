@@ -1,11 +1,11 @@
 {
     "rewrites": [
-      { "source": "/", "destination": "//" },
-      { "source": "/natureza", "destination": "/natureza" },
-      { "source": "/retratos", "destination": "/retratos" },
-      { "source": "/preto", "destination": "/preto" },
-      { "source": "/animal", "destination": "/animal" },
-      { "source": "/eventos", "destination": "/eventos" },
-      { "source": "/aldeias", "destination": "/aldeias" }
+      { "source": "/", "destination": "/index.html" },
+      { "source": "/natureza", "destination": "/natureza.html" },
+      { "source": "/retratos", "destination": "/retratos.html" },
+      { "source": "/preto", "destination": "/preto.html" },
+      { "source": "/animal", "destination": "/animal.html" },
+      { "source": "/eventos", "destination": "/eventos.html" },
+      { "source": "/aldeias", "destination": "/aldeias.html" }
     ]
   }

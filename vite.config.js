@@ -6,13 +6,13 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, '/'),
-        natureza: resolve(__dirname, 'natureza'),
-        retratos: resolve(__dirname, 'retratos'),
-        preto: resolve(__dirname, 'preto'),
-        animal: resolve(__dirname, 'animal'),
-        eventos: resolve(__dirname, 'eventos'),
-        aldeias: resolve(__dirname, 'aldeias')
+        main: resolve(__dirname, 'index.html'),
+        natureza: resolve(__dirname, 'natureza.html'),
+        retratos: resolve(__dirname, 'retratos.html'),
+        preto: resolve(__dirname, 'preto.html'),
+        animal: resolve(__dirname, 'animal.html'),
+        eventos: resolve(__dirname, 'eventos.html'),
+        aldeias: resolve(__dirname, 'aldeias.html')
       }
     }
   }
