@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Fotos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000d3;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .voltar {
+            display: inline-block;
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+
+        .voltar:hover {
+            transform: scale(1.2);
+        }
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .galeria-item {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .galeria-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .galeria-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .galeria-item:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <a href="index" class="voltar">&#8592;</a>
+    
+    <div class="galeria">
+        <div class="galeria-item">
+            <img src="/galeria/foto1.jpg">
+        </div>
+        <div class="galeria-item">
+            <img src="/galeria/foto2.jpg">
+        </div>
+        <div class="galeria-item">
+            <img src="/galeria/foto3.jpg">
+        </div>
+        <div class="galeria-item">
+            <img src="/galeria/foto4.jpg">
+        </div>
+        <div class="galeria-item">
+            <img src="/galeria/foto5.jpg">
+        </div>
+        <div class="galeria-item">
+            <img src="/galeria/foto6.jpg">
+        </div>
+    </div>
+</body>
+</html>
