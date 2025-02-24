@@ -1,10 +1,5 @@
 {
-    "routes": [
-      { "src": "/natureza", "dest": "/natureza.html" },
-      { "src": "/retratos", "dest": "/retratos.html" },
-      { "src": "/preto", "dest": "/preto.html" },
-      { "src": "/animal", "dest": "/animal.html" },
-      { "src": "/eventos", "dest": "/eventos.html" },
-      { "src": "/aldeias", "dest": "/aldeias.html" }
+    "rewrites": [
+      { "source": "/(.*)", "destination": "/$1" }
     ]
   }
