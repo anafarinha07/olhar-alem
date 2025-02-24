@@ -195,34 +195,6 @@ h1, h2, h3{
 .contact-left .lead{
     padding: 0.5rem;
 }
-.contact-left form{
-    margin-top: 3rem;
-}
-.contact-left form .form-control{
-    display: block;
-    margin: 1.6rem 0;
-    border: 2px solid rgba(0, 0, 0, 0.3);
-    padding: 1rem;
-    width: 100%;
-}
-.contact-left form .form-control::placeholder{
-    font-size: 15px;
-    font-family: 'Poppins', sans-serif;
-}
-.contact-left .btn-submit{
-    padding: 1.4rem 3rem;
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--dark-color);
-    color: var(--light-color);
-    margin-top: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 1.6rem;
-    transition: var(--transition);
-}
-.contact-left .btn-submit:hover{
-    background-color: #000;
-}
 
 #insta{
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('..//galeria/insta-pic.jpg') center/cover no-repeat fixed;
