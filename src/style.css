@@ -185,12 +185,13 @@ h1, h2, h3{
 #contact{
     background-color: rgb(234, 234, 234);
 }
-.contact-content{
-    flex-direction: column;
-    align-items: stretch;
+.contact-content {
+    display: flex;
+    align-items: center;
 }
-.contact-left{
-    margin-bottom: 5rem;
+.contact-left {
+    flex: 1;
+    margin-right: 20px;
 }
 .contact-left .lead{
     padding: 0.5rem;
@@ -283,7 +284,7 @@ h1, h2, h3{
 }
 
 .portfolio-grid .category {
-    position: relative; /* Garante que os elementos filhos absolutos sejam posicionados dentro desse container */
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -344,9 +345,11 @@ h1, h2, h3{
     .contact-content{
         flex-direction: row;
     }
-    .contact-right{
-        margin-left: 250px;
-        margin-top: 45px;
+    .contact-right {
+        width: 100%;
+        max-width: 350px;
+        margin-left: 0;
+        margin-top: 0;
     }
     .contact-left{
         width: 50%;
