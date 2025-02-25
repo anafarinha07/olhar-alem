@@ -68,7 +68,7 @@ h1, h2, h3{
 .lead{
     opacity: 0.9;
     padding: 1rem 0;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-weight: 300;
     line-height: 1.8;
 }
@@ -345,8 +345,8 @@ h1, h2, h3{
         flex-direction: row;
     }
     .contact-right{
-        padding-left: 3rem;
-        width: 50%;
+        margin-left: 250px;
+        margin-top: 45px;
     }
     .contact-left{
         width: 50%;
