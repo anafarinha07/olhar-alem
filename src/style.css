@@ -114,6 +114,9 @@ h1, h2, h3{
 .social-links li a:hover{
     opacity: 0.9;
 }
+.header-content img {
+    margin-bottom: 20px;
+}
 
 /* about */
 .about-left{
@@ -195,6 +198,9 @@ h1, h2, h3{
 }
 .contact-left .lead{
     padding: 0.5rem;
+}
+.contact-left .title h2 {
+    margin-bottom: 20px;
 }
 
 #insta{
