@@ -165,7 +165,13 @@ h1, h2, h3{
 #work .title h2, #work h3{
     color: var(--light-color);
 }
+#booking .title h2, #booking h3{
+    color: var(--light-color);
+}
 #work .title h2::after{
+    background: var(--light-color);
+}
+#booking .title h2::after{
     background: var(--light-color);
 }
 .work-bottom{
