@@ -242,7 +242,7 @@ h1, h2, h3{
 }
 
 .footer-content h3{
-    color: var(--light-color);
+    color: black;
     font-size: 2.5rem;
     letter-spacing: 1px;
 }
@@ -250,7 +250,7 @@ h1, h2, h3{
     flex-direction: column;
 }
 .footer-content ul li a{
-    color: var(--light-color);
+    color: black;
     font-size: 1.5rem;
     transition: var(--transition);
 }
