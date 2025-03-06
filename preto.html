@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria de Fotos</title>
+    <title>Portfólio de Fotografia</title>
     <style>
         * {
             margin: 0;
@@ -12,78 +12,123 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #000000d3;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .voltar {
-            display: inline-block;
-            color: white;
-            font-size: 24px;
-            text-decoration: none;
-            margin-bottom: 20px;
-            transition: transform 0.2s;
-        }
-
-        .voltar:hover {
-            transform: scale(1.2);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            color: #ffffff;
+            padding: 40px;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         .galeria {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            flex-grow: 1;
         }
 
         .galeria-item {
+            position: relative;
             overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            aspect-ratio: 3 / 4; /* Proporção 4:3 */
         }
 
         .galeria-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
         }
 
         .galeria-item img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             display: block;
-            transition: transform 0.3s ease;
+            transition: transform 0.5s ease;
         }
 
         .galeria-item:hover img {
-            transform: scale(1.1);
+            transform: scale(1.08);
+        }
+
+        .galeria-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .galeria-item:hover::after {
+            opacity: 1;
+        }
+
+        .voltar-container {
+            margin-top: 40px;
+            text-align: left; /* Alinha à esquerda */
+        }
+
+        .voltar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            color: #ffffff;
+            font-size: 24px;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .voltar:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(-10deg) scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .galeria {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
         }
     </style>
 </head>
 <body>
-    <a href="/" class="voltar">&#8592;</a>
-    
     <div class="galeria">
         <div class="galeria-item">
-            <img src="/preto&branco/foto1.jpg">
+            <img src="/retratos/foto1.jpg" alt="Fotografia 1">
         </div>
         <div class="galeria-item">
-            <img src="/preto&branco/foto1.jpg">
+            <img src="/retratos/foto1.jpg" alt="Fotografia 2">
         </div>
         <div class="galeria-item">
-            <img src="/preto&branco/foto1.jpg">
+            <img src="/retratos/foto1.jpg" alt="Fotografia 3">
         </div>
         <div class="galeria-item">
-            <img src="/preto&branco/foto1.jpg">
+            <img src="/retratos/foto1.jpg" alt="Fotografia 4">
         </div>
         <div class="galeria-item">
-            <img src="/preto&branco/foto1.jpg">
+            <img src="/retratos/foto1.jpg" alt="Fotografia 5">
         </div>
         <div class="galeria-item">
-            <img src="/preto&branco/foto1.jpg">
+            <img src="/retratos/foto1.jpg" alt="Fotografia 6">
         </div>
+    </div>
+
+    <div class="voltar-container">
+        <a href="/" class="voltar">←</a>
     </div>
 </body>
 </html>
