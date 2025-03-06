@@ -308,6 +308,8 @@ h1, h2, h3{
     object-fit: cover;
     border-radius: 60px;
     display: block;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
 }
 
 .portfolio-grid .category h3 {
@@ -331,6 +333,10 @@ h1, h2, h3{
     
     .portfolio-grid .category:hover {
         transform: scale(1.05);
+    }
+
+    .portfolio-grid .category:hover img {
+        filter: grayscale(0%);
     }
 
     .contact-left form .form-control{
@@ -399,6 +405,12 @@ h1, h2, h3{
 .about-img {
     width: 65%; /* Ajuste a largura conforme necessário */
     height: auto; /* Mantém a proporção da imagem */
+    filter: grayscale(100%); /* Adiciona efeito preto e branco */
+    transition: filter 0.3s ease; /* Adiciona transição suave */
+}
+
+.about-img:hover {
+    filter: grayscale(0%); /* Remove o efeito preto e branco ao passar o mouse */
 }
 
 
