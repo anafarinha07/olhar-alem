@@ -413,44 +413,5 @@ h1, h2, h3{
     filter: grayscale(0%); /* Remove o efeito preto e branco ao passar o mouse */
 }
 
-/* Adicionando estilos para dispositivos móveis */
-@media (max-width: 768px) {
-    header {
-        text-align: center;
-    }
-
-    .header-content {
-        flex-direction: column;
-    }
-
-    .about-content {
-        flex-direction: column;
-    }
-
-    .about-left, .about-right {
-        width: 100%;
-    }
-
-    .work-top {
-        flex-direction: column;
-    }
-
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .contact-content {
-        flex-direction: column;
-    }
-
-    .contact-left, .contact-right {
-        width: 100%;
-    }
-
-    .insta-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 
 
