@@ -224,12 +224,12 @@ h1, h2, h3{
     overflow: hidden;
     transition: var(--transition);
 }
-.insta-grid > div img{
-    height: 100%;
-    object-fit: cover;
+.insta-grid > div img {
+    filter: grayscale(100%); /* Adiciona efeito preto e branco */
+    transition: filter 0.3s ease; /* Adiciona transição suave */
 }
-.insta-grid > div:hover{
-    transform: scale(0.9);
+.insta-grid > div:hover img {
+    filter: grayscale(0%); /* Remove o efeito preto e branco ao passar o mouse */
 }
 
 /* footer */
