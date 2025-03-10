@@ -139,6 +139,11 @@
                     </a>
                     <h2 style="color: white; position: relative;">Agendamento</h2>
                 </div>
+                <!-- FormulárioPROF --
+                
+
+
+                booking section -->
                 <form action="#" method="POST" style="max-width: 400px; margin: 0; ">
                     <div style="margin-bottom: 20px;">
                         <label for="name" style="display: block; margin-bottom: 5px; color: #ffffff;">Nome</label>
@@ -251,3 +256,43 @@
     </footer>
 </body>
 </html>
+
+<?php
+// Variáveis para armazenar os valores
+$nome = $email = $data = $mensagem = "";
+$nomeErro = $emailErro = $dataErro = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_POST["name"])) {
+        $nomeErro = "O nome é obrigatório";
+    } else {
+        $nome = htmlspecialchars($_POST["name"]);
+    }
+    
+    if (empty($_POST["email"])) {
+        $emailErro = "O e-mail é obrigatório";
+    } elseif (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+        $emailErro = "Formato de e-mail inválido";
+    } else {
+        $email = htmlspecialchars($_POST["email"]);
+    }
+    
+    if (empty($_POST["date"])) {
+        $dataErro = "A data é obrigatória";
+    } else {
+        $data = htmlspecialchars($_POST["date"]);
+    }
+    
+    $mensagem = htmlspecialchars($_POST["message"]);
+    
+    // Se não houver erros, enviar o e-mail
+    if (empty($nomeErro) && empty($emailErro) && empty($dataErro)) {
+        $para = "a6808anafarinha@aes.edu.pt"; // Substitua pelo seu e-mail
+        $assunto = "Novo Agendamento";
+        $conteudo = "Nome: $nome\nEmail: $email\nData: $data\nMensagem: $mensagem";
+        $cabecalho = "From: $email";
+        
+        mail($para, $assunto, $conteudo, $cabecalho);
+    }
+}
+?>
