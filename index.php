@@ -260,39 +260,52 @@
 <?php
 // Variáveis para armazenar os valores
 $nome = $email = $data = $mensagem = "";
-$nomeErro = $emailErro = $dataErro = "";
+$nomeErro = $emailErro = $dataErro = $mensagemErro = "";
 
+// Verifica se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (empty($_POST["name"])) {
-        $nomeErro = "O nome é obrigatório";
+    // Validação do Nome
+    if (empty($_POST["nome"])) {
+        $nomeErro = "O nome é obrigatório.";
     } else {
-        $nome = htmlspecialchars($_POST["name"]);
+        $nome = htmlspecialchars($_POST["nome"]);
     }
     
+    // Validação do E-mail
     if (empty($_POST["email"])) {
-        $emailErro = "O e-mail é obrigatório";
+        $emailErro = "O e-mail é obrigatório.";
     } elseif (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-        $emailErro = "Formato de e-mail inválido";
+        $emailErro = "Formato de e-mail inválido.";
     } else {
         $email = htmlspecialchars($_POST["email"]);
     }
     
-    if (empty($_POST["date"])) {
-        $dataErro = "A data é obrigatória";
+    // Validação da Data
+    if (empty($_POST["data"])) {
+        $dataErro = "A data é obrigatória.";
     } else {
-        $data = htmlspecialchars($_POST["date"]);
+        $data = htmlspecialchars($_POST["data"]);
     }
     
-    $mensagem = htmlspecialchars($_POST["message"]);
+    // Validação da Mensagem
+    if (empty($_POST["mensagem"])) {
+        $mensagemErro = "A mensagem não pode estar vazia.";
+    } else {
+        $mensagem = htmlspecialchars($_POST["mensagem"]);
+    }
     
     // Se não houver erros, enviar o e-mail
-    if (empty($nomeErro) && empty($emailErro) && empty($dataErro)) {
+    if (empty($nomeErro) && empty($emailErro) && empty($dataErro) && empty($mensagemErro)) {
         $para = "a6808anafarinha@aes.edu.pt"; // Substitua pelo seu e-mail
         $assunto = "Novo Agendamento";
         $conteudo = "Nome: $nome\nEmail: $email\nData: $data\nMensagem: $mensagem";
-        $cabecalho = "From: $email";
-        
-        mail($para, $assunto, $conteudo, $cabecalho);
+        $cabecalho = "From: $email\r\nReply-To: $email\r\nContent-Type: text/plain; charset=UTF-8";
+
+        if (mail($para, $assunto, $conteudo, $cabecalho)) {
+            echo "<p style='color: green; text-align: center;'>Agendamento enviado com sucesso!</p>";
+        } else {
+            echo "<p style='color: red; text-align: center;'>Erro ao enviar o agendamento.</p>";
+        }
     }
 }
 ?>
