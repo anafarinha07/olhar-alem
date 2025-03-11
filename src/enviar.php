@@ -23,10 +23,10 @@ try {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com'; 
     $mail->SMTPAuth = true;
-    $mail->Username = 'seuemail@gmail.com'; // Substitua pelo seu e-mail
-    $mail->Password = 'suasenha'; // Use uma senha de aplicativo do Gmail
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    $mail->Port = 465;
+    $mail->Username = 'fotografia.olharalem@gmail.com'; // Altere para o email correto
+    $mail->Password = 'sua_senha_de_aplicativo'; // Substitua pela senha de aplicativo do Gmail
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Alterado para STARTTLS
+    $mail->Port = 587; // Porta alterada para 587
 
     // Configuração do remetente e destinatários
     $mail->setFrom('fotografia.olharalem@gmail.com', 'Fotografia Olhar Além');
@@ -41,7 +41,7 @@ try {
     $mail->Body = $corpo;
 
     // Desativar depuração para evitar erros Forbidden
-    $mail->SMTPDebug = 0;
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;
     
     // Enviar e-mail
     $mail->send();
