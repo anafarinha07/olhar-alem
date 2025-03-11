@@ -9,6 +9,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel = "stylesheet" href = "src/style.css">
     <script hre></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("SEU_USER_ID"); // Adicione seu User ID do EmailJS aqui
+        })();
+
+        function enviarEmail(e) {
+            e.preventDefault();
+
+            const templateParams = {
+                from_name: document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                message: document.getElementById('message').value,
+                date: document.getElementById('date').value
+            };
+
+            emailjs.send('service_id', 'template_id', templateParams) // Substitua com seus IDs
+                .then(function(response) {
+                    alert('Agendamento enviado com sucesso! Entraremos em contato em breve.');
+                    document.getElementById('formulario-agendamento').reset();
+                }, function(error) {
+                    alert('Erro ao enviar o agendamento. Por favor, tente novamente.');
+                });
+        }
+    </script>
 </head>
 <body>
     
@@ -144,7 +169,7 @@
 
 
                 booking section -->
-                <form action="enviar.php" method="POST" style="max-width: 400px; margin: 0; ">
+                <form id="formulario-agendamento" onsubmit="enviarEmail(event)" style="max-width: 400px; margin: 0; ">
                     <div style="margin-bottom: 20px;">
                         <label for="name" style="display: block; margin-bottom: 5px; color: #ffffff;">Nome</label>
                         <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
