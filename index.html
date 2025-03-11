@@ -12,11 +12,18 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
-            emailjs.init("SEU_USER_ID"); // Adicione seu User ID do EmailJS aqui
+            // Substitua YOUR_PUBLIC_KEY pela chave que você obteve no EmailJS
+            emailjs.init("abc123def456");
         })();
 
         function enviarEmail(e) {
             e.preventDefault();
+            
+            // Mostra mensagem de carregamento
+            const btnSubmit = document.querySelector('button[type="submit"]');
+            const btnTextoOriginal = btnSubmit.innerHTML;
+            btnSubmit.innerHTML = 'Enviando...';
+            btnSubmit.disabled = true;
 
             const templateParams = {
                 from_name: document.getElementById('name').value,
@@ -25,12 +32,19 @@
                 date: document.getElementById('date').value
             };
 
-            emailjs.send('service_id', 'template_id', templateParams) // Substitua com seus IDs
+            // Substitua YOUR_SERVICE_ID e YOUR_TEMPLATE_ID pelos IDs que você obteve no EmailJS
+            emailjs.send('service_xyz789', 'template_123abc', templateParams)
                 .then(function(response) {
                     alert('Agendamento enviado com sucesso! Entraremos em contato em breve.');
                     document.getElementById('formulario-agendamento').reset();
-                }, function(error) {
+                })
+                .catch(function(error) {
+                    console.error('Erro:', error);
                     alert('Erro ao enviar o agendamento. Por favor, tente novamente.');
+                })
+                .finally(function() {
+                    btnSubmit.innerHTML = btnTextoOriginal;
+                    btnSubmit.disabled = false;
                 });
         }
     </script>
