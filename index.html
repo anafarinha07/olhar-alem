@@ -10,22 +10,22 @@
     <link rel="stylesheet" href="src/style.css">
     <script hre></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
+    <script type="module">
         (function() {
-            emailjs.init("SEU_PUBLIC_KEY"); // Substitua pelo seu public key real
+            emailjs.init("ATE3-7SW3OC-UKRkp");
         })();
     
-        function sendEmail(event) {
+        window.sendEmail = async function(event) {
             event.preventDefault();
             
-            emailjs.sendForm("SEU_SERVICE_ID", "SEU_TEMPLATE_ID", event.target, "SEU_PUBLIC_KEY")
-            .then(() => {
-                alert("Mensagem enviada com sucesso!");
-                document.getElementById("bookingForm").reset();
-            })
-            .catch(() => {
-                alert("Erro ao enviar mensagem. Tente novamente.");
-            });
+            try {
+                await emailjs.sendForm('service_8sb2naq', 'template_8vv5eok', event.target);
+                alert('Marcação enviada com sucesso! Em breve entraremos em contacto.');
+                document.getElementById('bookingForm').reset();
+            } catch (error) {
+                console.log('ERRO:', error);
+                alert('Erro ao enviar mensagem. Tente novamente.');
+            }
         }
     </script>
 </head>
@@ -159,7 +159,7 @@
                     <h2 style="color: white; position: relative;">Agendamento</h2>
                 </div>
 
-                <form id="bookingForm" action="processa_agendamento.php" method="POST">
+                <form id="bookingForm" onsubmit="sendEmail(event)">
                     <div style="margin-bottom: 20px;">
                         <label for="name" style="display: block; margin-bottom: 5px; color: #ffffff;">Nome *</label>
                         <input type="text" id="name" name="name" required minlength="3" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
