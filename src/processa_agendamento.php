@@ -21,7 +21,7 @@ try {
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
     $mail->Username = 'fotografia.olharalem@gmail.com';
-    $mail->Password = 'SUA_SENHA_DE_APLICATIVO'; // Gere uma senha de aplicativo no Gmail
+    $mail->Password = '2025sertavalongo'; // Gere uma senha de aplicativo no Gmail
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
