@@ -18,12 +18,14 @@ $corpo .= "Mensagem: " . filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STR
 $mail = new PHPMailer(true);
 try {
     $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';
-    $mail->SMTPAuth = true;
-    $mail->Username = 'fotografia.olharalem@gmail.com';
-    $mail->Password = '2025sertavalongo'; // Gere uma senha de aplicativo no Gmail
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port = 587;
+$mail->Host = 'smtp.gmail.com';
+$mail->SMTPAuth = true;
+$mail->Username = 'fotografia.olharalem@gmail.com';
+$mail->Password = '2025sertavalongo'; // Aqui vai a senha de aplicativo do Gmail
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+$mail->Port = 587;
+$mail->CharSet = 'UTF-8'; // Adicionado para evitar problemas com acentos
+$mail->SMTPDebug = 0; // Desative o debug para evitar erros de Forbidden
 
     $mail->setFrom('fotografia.olharalem@gmail.com', 'Fotografia Olhar Além');
     if (!empty($email)) {
