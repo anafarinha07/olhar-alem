@@ -8,7 +8,6 @@
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="src/style.css">
-    <script hre></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="module">
         (function() {
@@ -30,7 +29,6 @@
     </script>
 </head>
 <body>
-    
     <!-- header -->
     <header id = "header" class = "vh-100 flex">
         <div class = "container">
@@ -148,78 +146,41 @@
         <!-- end of portfolio section -->
 
         <!-- booking section -->
-<section id="booking" class="py-7" style="margin-top: 20px; background-color: #1a1b1bca">
-    <div class="container">
-        <div class="contact-content flex">
-            <div class="contact-left">
-                <div class="title">
-                    <a href="#contact" class="btn-down btn-down-white">
-                        <i class="fas fa-chevron-down"></i>
-                    </a>
-                    <h2 style="color: white; position: relative;">Agendamento</h2>
-                </div>
-
-                <form id="bookingForm" onsubmit="sendEmail(event)">
-                    <div style="margin-bottom: 20px;">
-                        <label for="name" style="display: block; margin-bottom: 5px; color: #ffffff;">Nome *</label>
-                        <input type="text" id="name" name="name" required minlength="3" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
-                    </div>
-                    <div style="margin-bottom: 20px;">
-                        <label for="email" style="display: block; margin-bottom: 5px; color: #ffffff;">Email *</label>
-                        <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
-                    </div>
-                    <div style="margin-bottom: 20px;">
-                        <label for="date" style="display: block; margin-bottom: 5px; color: #ffffff;">Data *</label>
-                        <input type="date" id="date" name="date" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
-                    </div>
-                    <div style="margin-bottom: 20px;">
-                        <label for="message" style="display: block; margin-bottom: 5px; color: #ffffff;">Mensagem</label>
-                        <textarea id="message" name="message" rows="4" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; resize: both;"></textarea>
-                    </div>
-                    <div>
-                        <button type="submit" style="width: 100%; padding: 10px; background-color: #000000; color: rgb(255, 255, 255); border: none; border-radius: 4px; cursor: pointer; font-size: 16px;">Reservar Agora</button>
-                    </div>
-                </form>
-            </div>
-            <div class="contact-right">
-                <img src="/galeria/port-7.jpg">
-            </div>
-        </div>
-    </div>
-</section>
-<!-- end of booking section -->
-
-        <!-- contact section -->
-        <section id="contact" class="py-7" style="background-color: #ffffff">
+        <section id="booking" class="booking-section">
             <div class="container">
-                <div class="contact-content flex">
-                    <div class="contact-left">
+                <div class="booking-wrapper">
+                    <div class="booking-content">
                         <div class="title">
-                            <a href = "#insta" class = "btn-down">
-                                <i class = "fas fa-chevron-down"></i>
-                            </a>
-                            <h2>Contactos</h2>
+                            <a href="#contact" class="btn-down btn-down-white"><i class="fas fa-chevron-down"></i></a>
+                            <h2 class="white">Agendamento</h2>
                         </div>
-                        <div class="contact-link">
-                            <a href="https://wa.link/k9o5iz" class="btn lead"><i class="fab fa-whatsapp" style="margin-right: 5px;"></i> WhatsApp</a>
-                        </div>
-                        <div class="contact-link">
-                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=fotografia.olharalem@gmail.com" class="btn lead"><i class="fas fa-envelope" style="margin-right: 5px;"></i> E-mail</a>
-                        </div>
-                        <div class="contact-link">
-                            <a href="https://www.facebook.com/share/14Y5kVAH31/" class="btn lead"><i class="fab fa-facebook-f" style="margin-right: 5px;"></i> Facebook</a>
-                        </div>
-                        <div class="contact-link">
-                            <a href="https://www.instagram.com/olhar._.alem" class="btn lead"><i class="fab fa-instagram" style="margin-right: 5px;"></i> Instagram</a>
-                        </div>
+                        <form id="bookingForm" class="booking-form" onsubmit="sendEmail(event)">
+                            <div class="form-group">
+                                <label for="name">Nome *</label>
+                                <input type="text" id="name" name="name" required minlength="3">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Data *</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensagem</label>
+                                <textarea id="message" name="message" rows="4"></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit">Reservar Agora</button>
+                        </form>
                     </div>
-                    <div class="contact-right">
-                        <img src="/galeria/contact-pic.jpg" alt="contact image">
+                    <div class="booking-image">
+                        <img src="/galeria/port-7.jpg" alt="Fotografia de exemplo">
                     </div>
                 </div>
             </div>
         </section>
-        <!-- end of contact section -->
+        <!-- end of booking section -->
 
         <!-- instagram section -->
         <section id = "insta" class = "py-7">
@@ -245,26 +206,46 @@
     <!-- end of main content -->
 
     <!-- footer -->
-    <footer id = "footer" class = "py-7" style="background-color: white">
-        <div class = "container">
-            <div class = "footer-content">
-                <div>
+    <footer id="footer" class="py-7">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="/galeria/logo-menu.png" alt="Olhar Além" class="footer-logo">
                     <h3>ANA FARINHA</h3>
-                    <div>
-                        <img src="/galeria/logo-menu.png">
+                    <p class="footer-tagline">Capturando momentos, criando histórias</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/share/14Y5kVAH31/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/olhar._.alem/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.link/k9o5iz" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
 
-                <div>
-                    <h3>Links</h3>
-                    <ul class = "flex">
-                        <li><a href = "#about">Sobre Mim</a></li>
-                        <li><a href = "#work">O que estou a fazer</a></li>
-                        <li><a href = "#portfolio">Galeira</a></li>
-                        <li><a href = "#booking">Agendamento</a></li>
-                        <li><a href = "#contact">Contacto</a></li>
-                        <li><a href = "#insta">Instagram</a></li>
+                <div class="footer-nav">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="#about">Sobre Mim</a></li>
+                        <li><a href="#work">O meu trabalho</a></li>
+                        <li><a href="#portfolio">Galeria</a></li>
+                        <li><a href="#booking">Agendamento</a></li>
+                        <li><a href="#contact">Contacto</a></li>
                     </ul>
                 </div>
-    </body>
+
+                <div class="footer-contact">
+                    <h4>Contacte-me</h4>
+                    <ul class="contact-list" style="display: flex !important; flex-direction: column !important; list-style: none; padding: 0;">
+                        <li style="display: block; margin-bottom: 10px;"><i class="fas fa-envelope"></i> <a href="mailto:fotografia.olharalem@gmail.com">fotografia.olharalem@gmail.com</a></li>
+                        <li style="display: block; margin-bottom: 10px;"><i class="fab fa-whatsapp"></i> <a href="https://wa.link/k9o5iz">WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Olhar Além - Ana Farinha. Todos os direitos reservados.</p>
+                <a href="#header" class="back-to-top">
+                    <i class="fas fa-arrow-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
 </html>
