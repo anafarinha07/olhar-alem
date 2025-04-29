@@ -98,7 +98,6 @@
             width: 60px;
             height: 60px;
             color: #ffffff;
-            font-size: 32px;
             text-decoration: none;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
@@ -107,10 +106,19 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        .voltar svg {
+            transition: transform 0.3s ease;
+            transform: translateX(-2px);
+        }
+
         .voltar:hover {
             background: rgba(255, 255, 255, 0.2);
-            transform: rotate(-10deg) scale(1.1);
+            transform: scale(1.1);
             border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .voltar:hover svg {
+            transform: translateX(-5px);
         }
 
         /* Desktop */
@@ -147,7 +155,6 @@
             .voltar {
                 width: 50px;
                 height: 50px;
-                font-size: 28px;
             }
         }
 
@@ -166,7 +173,6 @@
             .voltar {
                 width: 45px;
                 height: 45px;
-                font-size: 24px;
             }
         }
     </style>
@@ -194,7 +200,11 @@
     </div>
 
     <div class="voltar-container">
-        <a href="/" class="voltar">←</a>
+        <a href="/" class="voltar">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
     </div>
 </body>
 </html>
