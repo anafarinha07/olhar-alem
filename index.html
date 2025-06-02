@@ -80,7 +80,7 @@
             <div class="container">
                 <div class="about-content grid">
                     <div class="about-left">
-                        <img src="/inicial/about-pic.jpg" alt="" class="about-img">
+                        <img src="/galeria/about-pic.jpg" alt="" class="about-img">
                     </div>
                     <div class="about-right">
                         <div class="title">
@@ -126,79 +126,61 @@
         </section>
         <!-- end of work section -->
 
-        <!-- portfolio section -->
-        <section id="portfolio" class="vh-100 py-7">
+     <!-- portfolio section -->
+     <section id="portfolio" class="vh-100 py-7">
+        <div class="container">
+            <div class="portfolio-content">
+                <div class="title">
+                    <h2>Portfólio</h2>
+                    <a href="#booking" class="btn-down">
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
+
+                <div class="portfolio-grid grid">
+                    <a href="/retratos" class="category">
+                        <img src="/galeria/port-1.jpg">
+                        <h3>Retratos</h3>
+                    </a>
+                    <a href="/natureza" class="category">
+                        <img src="/galeria/port-2.jpg">
+                        <h3>Natureza</h3>
+                    </a>
+                    <a href="/animais" class="category">
+                        <img src="/galeria/port-4.jpg">
+                        <h3>Animal</h3>
+                    </a>
+                    <a href="/objeto" class="category">
+                        <img src="/galeria/port-6.jpg">
+                        <h3>Objetos e Trabalhos</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end of portfolio section -->
+
+         <!-- instagram section -->
+         <section id="insta" class="py-7">
             <div class="container">
-                <div class="portfolio-content">
+                <div class="insta-content">
                     <div class="title">
-                        <h2>Portfólio</h2>
-                        <a href="#booking" class="btn-down">
+                        <h2>Instagram</h2>
+                        <a href="#footer" class="btn-down btn-down-white">
                             <i class="fas fa-chevron-down"></i>
                         </a>
                     </div>
-
-                    <div class="portfolio-grid grid">
-                        <a href="/retratos" class="category">
-                            <img src="/galeria/port-1.jpg">
-                            <h3>Retratos</h3>
-                        </a>
-                        <a href="/natureza" class="category">
-                            <img src="/galeria/port-2.jpg">
-                            <h3>Natureza</h3>
-                        </a>
-                        <a href="/animais" class="category">
-                            <img src="/galeria/port-3.jpg">
-                            <h3>Animais</h3>
-                        </a>
-                        <a href="/objetos" class="category">
-                            <img src="/galeria/port-5.jpg">
-                            <h3>Objetos e Trabalhos</h3>
-                        </a>
+                    <div class="insta-grid grid">
+                        <div><img src="/galeria/port-1.jpg"></div>
+                        <div><img src="/galeria/port-2.jpg"></div>
+                        <div><img src="/galeria/port-3.jpg"></div>
+                        <div><img src="/galeria/port-4.jpg"></div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- end of portfolio section -->
-
-        <!-- Instagram section -->
-<section id="insta" class="py-7">
-    <div class="container">
-        <div class="insta-content">
-            <div class="title">
-                <h2>Instagram</h2>
-                <a href="#footer" class="btn-down btn-down-white">
-                    <i class="fas fa-chevron-down"></i>
-                </a>
-            </div>
-            <div id="insta-grid" class="insta-grid grid">
-                <!-- As imagens serão carregadas aqui -->
-            </div>
-        </div>
-    </div>
-</section>
-<!-- end of Instagram section -->
-
-<script>
-    async function fetchInstagramImages() {
-        const accessToken = 'YOUR_ACCESS_TOKEN';  // Substitui pelo teu token
-        const endpoint = `https://graph.instagram.com/me/media?fields=id,media_type,media_url&access_token=${accessToken}`;
-
-        try {
-            const response = await fetch(endpoint);
-            const data = await response.json();
-            const images = data.data.filter(item => item.media_type === "IMAGE");
-
-            const grid = document.getElementById("insta-grid");
-            grid.innerHTML = images.map(img => `<div><img src="${img.media_url}" alt="Instagram Image"></div>`).join('');
-        } catch (error) {
-            console.error("Erro ao buscar imagens do Instagram:", error);
-        }
-    }
-
-    fetchInstagramImages();
-</script>
+        <!-- end of instagram section -->
     </main>
-    <!-- end of main content -->
 
     <!-- booking section -->
     <section id="booking" class="booking-section">

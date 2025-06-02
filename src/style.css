@@ -79,7 +79,7 @@ h3 {
 /* header */
 #header {
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)),
-    url("..//inicial/header-banner.jpg") center/cover no-repeat fixed;
+    url("..//galeria/header-banner.jpg") center/cover no-repeat fixed;
   justify-content: flex-start;
   align-items: flex-end;
 }
@@ -164,7 +164,7 @@ h3 {
 /* work */
 #work {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)),
-    url("..//inicial/work-pic.jpg") center/cover no-repeat fixed;
+    url("..//galeria/agendamento.jpg") center/cover no-repeat fixed;
   color: var(--light-color);
   padding: 12rem 0;
 }

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aldeias - Olhar Além</title>
+    <link rel="stylesheet" href="/src/gallery.css">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Olhar Além - Ana Farinha" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1800px;
+            margin: 0 auto;
+            flex-grow: 1;
+            padding: 40px;
+            width: 100%;
+        }
+
+        .galeria-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            aspect-ratio: 3 / 4;
+            background: #2a2a2a;
+            width: 100%;
+        }
+
+        .galeria-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .galeria-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .galeria-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .galeria-item:hover::after {
+            opacity: 1;
+        }
+
+        .voltar-container {
+            position: fixed;
+            bottom: 40px;
+            left: 40px;
+            z-index: 100;
+        }
+
+        .voltar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            color: #ffffff;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .voltar svg {
+            transition: transform 0.3s ease;
+            transform: translateX(-2px);
+        }
+
+        .voltar::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            transform: rotate(-45deg);
+            transition: all 0.3s ease;
+        }
+
+        .voltar:hover::before {
+            transform: rotate(-45deg) translate(5px, 5px);
+        }
+
+        .voltar:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Desktop */
+        @media (min-width: 1200px) {
+            .galeria {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 40px;
+                padding: 60px;
+            }
+        }
+
+        /* Tablet */
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .galeria {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+                padding: 40px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 767px) {
+            .galeria {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .voltar-container {
+                bottom: 20px;
+                left: 20px;
+            }
+
+            .voltar {
+                width: 50px;
+                height: 50px;
+                font-size: 28px;
+            }
+        }
+
+        /* Mobile Pequeno */
+        @media (max-width: 480px) {
+            .galeria {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .galeria-item {
+                border-radius: 15px;
+            }
+
+            .voltar {
+                width: 45px;
+                height: 45px;
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="galeria">
+        <div class="galeria-item">
+            <img src="/retratos/foto1.jpg" alt="Fotografia 1">
+        </div>
+        <div class="galeria-item">
+            <img src="/retratos/foto1.jpg" alt="Fotografia 2">
+        </div>
+        <div class="galeria-item">
+            <img src="/retratos/foto1.jpg" alt="Fotografia 3">
+        </div>
+        <div class="galeria-item">
+            <img src="/retratos/foto1.jpg" alt="Fotografia 4">
+        </div>
+        <div class="galeria-item">
+            <img src="/retratos/foto1.jpg" alt="Fotografia 5">
+        </div>
+        <div class="galeria-item">
+            <img src="/retratos/foto1.jpg" alt="Fotografia 6">
+        </div>
+    </div>
+
+    <div class="voltar-container">
+        <a href="/" class="voltar">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+    </div>
+</body>
+</html>
