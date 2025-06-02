@@ -164,7 +164,7 @@ h3 {
 /* work */
 #work {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)),
-    url("..//galeria/agendamento.jpg") center/cover no-repeat fixed;
+    url("..//galeria/work-pic.jpg") center/cover no-repeat fixed;
   color: var(--light-color);
   padding: 12rem 0;
 }
@@ -519,7 +519,7 @@ h3 {
 /* booking section */
 .booking-section {
   background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.7)),
-    url("..//galeria/work-pic.jpg") center/cover no-repeat fixed;
+    url("..//galeria/agendamento.jpg") center/cover no-repeat fixed;
   padding: 6rem 0;
 }
 
