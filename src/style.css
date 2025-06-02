@@ -254,9 +254,9 @@ h3 {
 
 .portfolio-grid .category img {
   width: 100%;
-  height: 250px; /* Valor menor para mobile */
+  height: 250px;
   object-fit: cover;
-  border-radius: 30px; /* Valor menor para mobile */
+  border-radius: 30px;
   display: block;
   filter: grayscale(100%);
   transition: filter 0.3s ease;
@@ -774,14 +774,14 @@ h3 {
 }
 
 .about-img {
-  width: 65%; /* Ajuste a largura conforme necessário */
-  height: auto; /* Mantém a proporção da imagem */
-  filter: grayscale(100%); /* Adiciona efeito preto e branco */
-  transition: filter 0.3s ease; /* Adiciona transição suave */
+  width: 65%;
+  height: auto;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
 }
 
 .about-img:hover {
-  filter: grayscale(0%); /* Remove o efeito preto e branco ao passar o mouse */
+  filter: grayscale(0%);
 }
 
 /* Adicione ao final do seu arquivo style.css */
@@ -816,14 +816,14 @@ h3 {
 }
 
 .insta-img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
 }
 
 .insta-grid a:hover .insta-img {
-    filter: grayscale(0%);
+  filter: grayscale(0%);
 }
