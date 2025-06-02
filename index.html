@@ -146,21 +146,17 @@
                             <img src="/galeria/port-2.jpg">
                             <h3>Natureza</h3>
                         </a>
-                        <a href="/preto" class="category">
+                        <a href="/animais" class="category">
                             <img src="/galeria/port-3.jpg">
-                            <h3>Preto&Branco</h3>
+                            <h3>Animais</h3>
                         </a>
-                        <a href="/animal" class="category">
+                        <a href="/paisagens" class="category">
                             <img src="/galeria/port-4.jpg">
-                            <h3>Animal</h3>
+                            <h3>Paisagens</h3>
                         </a>
-                        <a href="/eventos" class="category">
+                        <a href="/objetos" class="category">
                             <img src="/galeria/port-5.jpg">
-                            <h3>Eventos</h3>
-                        </a>
-                        <a href="/aldeias" class="category">
-                            <img src="/galeria/port-6.jpg">
-                            <h3>Aldeias</h3>
+                            <h3>Objetos e Trabalhos</h3>
                         </a>
                     </div>
                 </div>
@@ -168,26 +164,43 @@
         </section>
         <!-- end of portfolio section -->
 
-        <!-- instagram section -->
-        <section id="insta" class="py-7">
-            <div class="container">
-                <div class="insta-content">
-                    <div class="title">
-                        <h2>Instagram</h2>
-                        <a href="#footer" class="btn-down btn-down-white">
-                            <i class="fas fa-chevron-down"></i>
-                        </a>
-                    </div>
-                    <div class="insta-grid grid">
-                        <div><img src="/galeria/port-1.jpg"></div>
-                        <div><img src="/galeria/port-2.jpg"></div>
-                        <div><img src="/galeria/port-3.jpg"></div>
-                        <div><img src="/galeria/port-4.jpg"></div>
-                    </div>
-                </div>
+        <!-- Instagram section -->
+<section id="insta" class="py-7">
+    <div class="container">
+        <div class="insta-content">
+            <div class="title">
+                <h2>Instagram</h2>
+                <a href="#footer" class="btn-down btn-down-white">
+                    <i class="fas fa-chevron-down"></i>
+                </a>
             </div>
-        </section>
-        <!-- end of instagram section -->
+            <div id="insta-grid" class="insta-grid grid">
+                <!-- As imagens serão carregadas aqui -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end of Instagram section -->
+
+<script>
+    async function fetchInstagramImages() {
+        const accessToken = 'YOUR_ACCESS_TOKEN';  // Substitui pelo teu token
+        const endpoint = `https://graph.instagram.com/me/media?fields=id,media_type,media_url&access_token=${accessToken}`;
+
+        try {
+            const response = await fetch(endpoint);
+            const data = await response.json();
+            const images = data.data.filter(item => item.media_type === "IMAGE");
+
+            const grid = document.getElementById("insta-grid");
+            grid.innerHTML = images.map(img => `<div><img src="${img.media_url}" alt="Instagram Image"></div>`).join('');
+        } catch (error) {
+            console.error("Erro ao buscar imagens do Instagram:", error);
+        }
+    }
+
+    fetchInstagramImages();
+</script>
     </main>
     <!-- end of main content -->
 
