@@ -164,7 +164,7 @@ h3 {
 /* work */
 #work {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)),
-    url("..//galeria/work-pic.jpg") center/cover no-repeat fixed;
+    url("..//galeria/objetos - Cópia2.jpg") center/cover no-repeat fixed;
   color: var(--light-color);
   padding: 12rem 0;
 }
@@ -245,6 +245,11 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-grid .category:hover {
+  transform: scale(1.05);
 }
 
 .portfolio-grid .category img {
@@ -269,14 +274,14 @@ h3 {
   background: rgba(0, 0, 0, 0.192);
   width: 100%;
   height: 100%;
-  border-radius: 30px; /* Valor menor para mobile */
-  font-size: 1.4rem; /* Texto um pouco menor para mobile */
+  border-radius: 30px;
+  font-size: 1.4rem;
   font-weight: bold;
   text-align: center;
 }
 
-.portfolio-grid .category:hover {
-  transform: scale(1.05);
+.portfolio-grid .category:hover h3 {
+  opacity: 1;
 }
 
 .portfolio-grid .category:hover img {
@@ -519,7 +524,7 @@ h3 {
 /* booking section */
 .booking-section {
   background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.7)),
-    url("..//galeria/agendamento.jpg") center/cover no-repeat fixed;
+    url("..//galeria/natureza - Cópia2.jpg") center/cover no-repeat fixed;
   padding: 6rem 0;
 }
 
