@@ -9,10 +9,8 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         natureza: resolve(__dirname, 'natureza.html'),
         retratos: resolve(__dirname, 'retratos.html'),
-        preto: resolve(__dirname, 'preto.html'),
-        animal: resolve(__dirname, 'animal.html'),
-        eventos: resolve(__dirname, 'eventos.html'),
-        aldeias: resolve(__dirname, 'aldeias.html')
+        animais: resolve(__dirname, 'animais.html'),
+        objetos: resolve(__dirname, 'objetos.html')
       }
     }
   }
