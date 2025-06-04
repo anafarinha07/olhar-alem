@@ -288,6 +288,38 @@ h3 {
   filter: grayscale(0%);
 }
 
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.insta-grid a {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 1/1;
+}
+
+.insta-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.insta-grid a:hover .insta-img {
+  transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .insta-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 /* contact */
 #contact {
   background-color: rgb(234, 234, 234);
@@ -317,45 +349,6 @@ h3 {
 }
 #insta .title h2::after {
   background-color: var(--light-color);
-}
-
-/* === Instagram Section Improved === */
-.insta-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-}
-
-@media (min-width: 768px) {
-  .insta-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.insta-grid > div {
-  aspect-ratio: 1/1;
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.insta-grid > div:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.insta-grid > div img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(100%); /* Imagens em preto e branco */
-  transition: transform 0.5s ease, filter 0.5s ease; /* Transição suave para o filtro */
-}
-
-.insta-grid > div:hover img {
-  transform: scale(1.05);
-  filter: grayscale(0%); /* Remove o efeito preto e branco ao passar o mouse */
 }
 
 /* footer */
