@@ -207,12 +207,16 @@ h3 {
     }
 
     .about-image {
-        order: -1;
-        margin-bottom: 2rem;
+        display: none;
     }
 
-    .about-img {
-        max-width: 300px;
+    .about-text {
+        text-align: center;
+    }
+
+    .about .title h2::after {
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
