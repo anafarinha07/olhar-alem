@@ -259,11 +259,11 @@ h3 {
 }
 
 /* work */
-#work {
+.work-section {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)),
     url("..//galeria/objetos.jpg") center/cover no-repeat;
   color: var(--light-color);
-  padding: 12rem 0;
+  padding: 8rem 0;
   position: relative;
   width: 100%;
 }
@@ -273,62 +273,67 @@ h3 {
   margin: 0 auto;
 }
 
-#work .title {
-  margin-bottom: 7rem;
-}
-
-#work .title h2,
-#work h3 {
-  color: var(--light-color);
+.work-section .title {
   margin-bottom: 4rem;
 }
 
-#work .title h2::after {
+.work-section .title h2 {
+  color: var(--light-color);
+  margin-bottom: 2rem;
+}
+
+.work-section .title h2::after {
   background: var(--light-color);
 }
 
 .work-top {
-  display: grid;
-  gap: 5rem;
-  grid-template-columns: 1fr;
-  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-@media (min-width: 768px) {
-  #work {
-    padding: 15rem 0;
+.work-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.work-item i {
+  color: var(--light-color);
+  font-size: 1.8rem;
+  margin-top: 0.3rem;
+}
+
+.work-item .lead {
+  color: var(--light-color);
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .work-section {
+    padding: 6rem 0;
   }
-
-  .work-top {
-    gap: 6rem;
+  
+  .work-item {
+    padding: 1rem;
   }
-}
-
-.work-top li {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  padding: 3.5rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-  margin-bottom: 2rem;
-}
-
-.work-top li:hover {
-  transform: translateY(-5px);
-}
-
-.work-top li i {
-  color: #fff;
-  margin-right: 1rem;
-  font-size: 1.2rem;
-}
-
-.work-top .lead {
-  font-size: 1.7rem;
-  line-height: 1.7;
-  letter-spacing: 0.5px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  
+  .work-item .lead {
+    font-size: 1.4rem;
+  }
+  
+  .work-item i {
+    font-size: 1.6rem;
+  }
 }
 
 /* portfolio */
