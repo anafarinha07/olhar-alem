@@ -330,107 +330,155 @@ h3 {
 }
 
 /* portfolio */
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+#portfolio {
+    padding: 7rem 0;
 }
 
-.portfolio-grid > div {
-  transition: var(--transition);
+.portfolio-content {
+    max-width: 1200px;
+    margin: 0 auto;
 }
-.portfolio-grid > div:hover {
-  transform: scale(0.9);
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .portfolio-grid .category {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    border-radius: 30px;
 }
 
 .portfolio-grid .category:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .portfolio-grid .category img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 30px;
-  display: block;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 30px;
+    display: block;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
 }
 
 .portfolio-grid .category h3 {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.192);
-  width: 100%;
-  height: 100%;
-  border-radius: 30px;
-  font-size: 1.4rem;
-  font-weight: bold;
-  text-align: center;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.192);
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
 .portfolio-grid .category:hover h3 {
-  opacity: 1;
+    opacity: 0;
 }
 
 .portfolio-grid .category:hover img {
-  filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+
+/* instagram */
+#insta {
+    padding: 7rem 0;
+}
+
+.insta-content {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .insta-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
 }
 
 @media (min-width: 768px) {
-  .insta-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+    .insta-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
-.insta-grid > div {
-  aspect-ratio: 1/1;
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.insta-grid > a {
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.insta-grid > div:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+.insta-grid > a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.insta-grid > div img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(100%);
-  transition: transform 0.5s ease, filter 0.5s ease;
+.insta-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: transform 0.5s ease, filter 0.5s ease;
 }
 
-.insta-grid > div:hover img {
-  transform: scale(1.05);
-  filter: grayscale(0%);
+.insta-grid > a:hover .insta-img {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+@media (min-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+    
+    .portfolio-grid .category img {
+        height: 300px;
+    }
+
+    .insta-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .portfolio-grid > div:nth-child(2),
+    .portfolio-grid > div:nth-child(6) {
+        grid-column: span 2;
+    }
 }
 
 /* contact */
