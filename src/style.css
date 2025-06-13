@@ -161,6 +161,61 @@ h3 {
   background-color: var(--dark-color);
 }
 
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text {
+    text-align: left;
+}
+
+.about-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-img:hover {
+    filter: grayscale(0%);
+}
+
+.about .title {
+    margin-bottom: 3rem;
+}
+
+.about .lead {
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-image {
+        order: -1;
+        margin-bottom: 2rem;
+    }
+
+    .about-img {
+        max-width: 300px;
+    }
+}
+
 /* work */
 #work {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)),
@@ -783,10 +838,14 @@ h3 {
 }
 
 .about-img {
-  width: 65%;
+  width: 100%;
   height: auto;
   filter: grayscale(100%);
   transition: filter 0.3s ease;
+  display: block;
+  margin: 0 auto;
+  max-width: 500px;
+  border-radius: 10px;
 }
 
 .about-img:hover {
@@ -803,10 +862,10 @@ h3 {
 
 @media (max-width: 767px) {
   .about-left {
-    display: none;
+    display: block;
+    margin-bottom: 3rem;
   }
 
-  /* Ajuste opcional para melhorar o layout quando a foto desaparecer */
   .about-content {
     text-align: center;
   }
