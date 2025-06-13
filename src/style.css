@@ -11,15 +11,25 @@
   padding: 0;
   margin: 0;
   outline: 0;
+  -webkit-tap-highlight-color: transparent;
 }
+
 html {
   font-size: 10px;
   scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
+
 body {
   font-size: 1.6rem;
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
+  min-height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
 }
 
 button,
@@ -79,9 +89,12 @@ h3 {
 /* header */
 #header {
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)),
-    url("..//galeria/header-banner.jpg") center/cover no-repeat fixed;
+    url("..//galeria/header-banner.jpg") center/cover no-repeat;
   justify-content: flex-start;
   align-items: flex-end;
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
 }
 #header .container {
   width: 100%;
@@ -201,6 +214,31 @@ h3 {
 }
 
 @media (max-width: 768px) {
+    html {
+        font-size: 9px;
+    }
+    
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    #header {
+        background-attachment: scroll;
+    }
+    
+    #work {
+        background-attachment: scroll;
+    }
+    
+    .header-content {
+        padding-bottom: 2rem;
+    }
+    
+    .social-links li a {
+        width: 35px;
+        height: 35px;
+    }
+
     .about-content {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -223,9 +261,11 @@ h3 {
 /* work */
 #work {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)),
-    url("..//galeria/objetos.jpg") center/cover no-repeat fixed;
+    url("..//galeria/objetos.jpg") center/cover no-repeat;
   color: var(--light-color);
   padding: 12rem 0;
+  position: relative;
+  width: 100%;
 }
 
 .work-content {
